@@ -1,1 +1,1 @@
-web gunicorn demo:uploadapp
+web gunicorn demo.wsgi --log-file -
