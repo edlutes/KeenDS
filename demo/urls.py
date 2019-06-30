@@ -31,7 +31,7 @@ urlpatterns = [
     path('data/', include('uploadapp.urls')),
     # url(r'^.*', TemplateView.as_view(template_name="index.html"), name="index")
     # path('', RedirectView.as_view(url='templates/index.html'), name='home'),
-    url(r'^$', serve,kwargs={'path': '/app/templates/index.html'}),    
+    url(r'^$', serve,kwargs={'path': 'index.html'}),    
     # url(r'^(?!/?static/)(?!/?media/)(?P<path>.*\..*)$',
         # RedirectView.as_view(url='/static/%(path)s', permanent=False)),
 
