@@ -21,7 +21,8 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('upload/', include('uploadapp.urls')),
-    path('', include('uploadapp.urls')),
+    #path('', include('uploadapp.urls')),
+    url(r'^.*', TemplateView.as_view(template_name="index.html"), name="index")
 ]
 
 if settings.DEBUG:
