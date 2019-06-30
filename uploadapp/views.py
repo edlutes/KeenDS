@@ -6,16 +6,13 @@ from rest_framework import status, generics
 from rest_framework.decorators import api_view
 
 from .serializers import FileSerializer, DataSerializer
-# import io
+
 import csv
-# import json
-# from rest_framework.renderers import JSONRenderer
-# from retry import retry
 import threading
 from .models import Row
 
-from rest_framework.settings import api_settings
-# from rest_framework_csv import renderers as r
+#from rest_framework.settings import api_settings
+
 
 
 
