@@ -131,13 +131,18 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # Defaults needed for this project defaults
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
-STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
+# STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+ANGULAR_APP_DIR = os.path.join(BASE_DIR, 'frontend/dist')
+STATICFILES_DIRS = [
+    os.path.join(ANGULAR_APP_DIR),
+]
 
 CORS_ORIGIN_ALLOW_ALL = True
 
