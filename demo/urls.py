@@ -28,10 +28,10 @@ from django.contrib.staticfiles.views import serve
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('upload/', include('uploadapp.urls')),
-    path('data/', include('uploadapp.urls')),
     # url(r'^.*', TemplateView.as_view(template_name="index.html"), name="index")
-    path('', RedirectView.as_view(url='index.html'), name='home'),
+    #path('', RedirectView.as_view(url='index.html'), name='home'),
     #url(r'^$', serve,kwargs={'path': 'index.html'}),    
+    url(r'^(?P<path>.*)/$', index)
 
     # url(r'^(?!/?static/)(?!/?media/)(?P<path>.*\..*)$',
         # RedirectView.as_view(url='/static/%(path)s', permanent=False)),

@@ -43,7 +43,8 @@ class DataDetail(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = DataSerializer
 
     
-
+def index(request, path=''):
+    return render(request, 'index.html')
 
 
 
