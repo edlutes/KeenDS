@@ -30,8 +30,11 @@ urlpatterns = [
     path('upload/', include('uploadapp.urls')),
     # url(r'^.*', TemplateView.as_view(template_name="index.html"), name="index")
     #path('', RedirectView.as_view(url='index.html'), name='home'),
-    #url(r'^$', serve,kwargs={'path': 'index.html'}),    
-    url(r'^(?P<path>.*)/$', index)
+    url(r'^$', RedirectView.as_view(url='/static/index.html'), name='home')
+    #url(r'^$', serve,kwargs={'path': 'index.html'}),  
+    # 
+    # kinda works....html unexpected < in index.html  
+    #url(r'^(?P<path>.*)/$', index)
 
     # url(r'^(?!/?static/)(?!/?media/)(?P<path>.*\..*)$',
         # RedirectView.as_view(url='/static/%(path)s', permanent=False)),
