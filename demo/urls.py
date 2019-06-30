@@ -26,9 +26,9 @@ from uploadapp.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('upload/', include('uploadapp.urls')),
-    path('', include('uploadapp.urls')),
+    #path('', include('uploadapp.urls')),
     # url(r'^.*', TemplateView.as_view(template_name="index.html"), name="index")
-    url(r'^$', RedirectView.as_view(url=’/static/index.html’), name=’home’),
+    path('', RedirectView.as_view(url=’/static/index.html’), name=’home’),
 ]
 
 if settings.DEBUG:
