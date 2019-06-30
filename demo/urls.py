@@ -22,15 +22,17 @@ from django.conf.urls import url
 from django.views.generic.base import RedirectView, TemplateView
 from uploadapp.views import *
 
-from django.contrib.staticfiles.views import serve
+# from django.contrib.staticfiles.views import serve
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('upload/', include('uploadapp.urls')),
+    path('', include('uploadapp.urls')),
     # url(r'^.*', TemplateView.as_view(template_name="index.html"), name="index")
     #path('', RedirectView.as_view(url='index.html'), name='home'),
-    url(r'^$', RedirectView.as_view(url='/static/index.html'), name='home')
+    # url(r'^$', RedirectView.as_view(url='/static/index.html'), name='home')
+    url(r'^$', RedirectView.as_view(url='https://keends-frontend.herokuapp.com/'), name='home')
     #url(r'^$', serve,kwargs={'path': 'index.html'}),  
     # 
     # kinda works....html unexpected < in index.html  
