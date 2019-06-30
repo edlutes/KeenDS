@@ -32,7 +32,7 @@ urlpatterns = [
     # url(r'^.*', TemplateView.as_view(template_name="index.html"), name="index")
     #path('', RedirectView.as_view(url='index.html'), name='home'),
     # url(r'^$', RedirectView.as_view(url='/static/index.html'), name='home')
-    url('', RedirectView.as_view(url='https://keends-frontend.herokuapp.com'), name='home')
+    #url('', RedirectView.as_view(url='https://keends-frontend.herokuapp.com'), name='home')
     #url(r'^$', serve,kwargs={'path': 'index.html'}),  
     # 
     # kinda works....html unexpected < in index.html  
