@@ -10,7 +10,7 @@ class Foo(models.Model):
 
 
 class Row(models.Model):
-    Observation_Date = models.CharField(max_length=10)
+    Observation_Date = models.CharField(max_length=100)
     Retail_Sales_Volume = models.FloatField(default = 0)
     Retail_Price = models.FloatField(default = 0)
     Acv_Distribution =models.FloatField(default = 0)
