@@ -1,12 +1,9 @@
 from django.db import models
 
 class File(models.Model):
-    file = models.FileField(blank=False, null=False)
+    file = models.FileField(blank=False, null=False, max_length=255)
     def __str__(self):
         return self.file.name
-
-class Foo(models.Model):
-    fubar = models.TextField()
 
 
 class Row(models.Model):
