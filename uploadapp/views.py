@@ -43,11 +43,6 @@ class DataDetail(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = DataSerializer
 
     
-def index(request, path=''):
-    return render(request, 'index.html')
-
-
-
 
 #@retry((FileNotFoundError, IOError), delay=1, backoff=2, max_delay=10, tries=100)
 def parse_csv_data(csv_file):
