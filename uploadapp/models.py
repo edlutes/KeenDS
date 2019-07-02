@@ -6,6 +6,8 @@ class File(models.Model):
         return self.file.name
 
 
+# This works ok for now based on a pre-defined csv file, but would be better to get the headers from the file
+
 class Row(models.Model):
     Observation_Date = models.CharField(max_length=255)
     Retail_Sales_Volume = models.FloatField(max_length=255, default = 0)

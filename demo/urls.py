@@ -18,29 +18,11 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 
-from django.conf.urls import url
-from django.views.generic.base import RedirectView, TemplateView
-from uploadapp.views import *
-
-# from django.contrib.staticfiles.views import serve
-
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('upload/', include('uploadapp.urls')),
     path('', include('uploadapp.urls')),
-    # url(r'^.*', TemplateView.as_view(template_name="index.html"), name="index")
-    #path('', RedirectView.as_view(url='index.html'), name='home'),
-    # url(r'^$', RedirectView.as_view(url='/static/index.html'), name='home')
-    #url('', RedirectView.as_view(url='https://keends-frontend.herokuapp.com'), name='home')
-    #url(r'^$', serve,kwargs={'path': 'index.html'}),  
-    # 
-    # kinda works....html unexpected < in index.html  
-    #url(r'^(?P<path>.*)/$', index)
-
-    # url(r'^(?!/?static/)(?!/?media/)(?P<path>.*\..*)$',
-        # RedirectView.as_view(url='/static/%(path)s', permanent=False)),
-
 ]
 
 if settings.DEBUG:

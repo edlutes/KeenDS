@@ -11,10 +11,6 @@ import csv
 import threading
 from .models import Row
 
-#from rest_framework.settings import api_settings
-
-
-
 
 class FileUploadView(APIView):
     parser_class = (FileUploadParser,)
@@ -25,6 +21,7 @@ class FileUploadView(APIView):
       if file_serializer.is_valid():
           file_serializer.save()
           # Split the parsing thread
+          # Instead of calling straight into parse_csv_data this should probably go through some data validation
           thread = threading.Thread(target =parse_csv_data, kwargs={'csv_file': file_serializer.data.get("file") })
           thread.start()
           return Response(file_serializer.data, status=status.HTTP_201_CREATED)
@@ -43,7 +40,7 @@ class DataDetail(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = DataSerializer
 
     
-
+# Not used but could be needed depending on on long it takes to save the file
 #@retry((FileNotFoundError, IOError), delay=1, backoff=2, max_delay=10, tries=100)
 def parse_csv_data(csv_file):
 
