@@ -2,5 +2,6 @@ venv
 *.pyc
 staticfiles
 .env
+env
 cleanup
 .vscode
